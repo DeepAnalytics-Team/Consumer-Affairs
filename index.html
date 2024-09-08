@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Website for Consumer Affairs, Food & Public Distribution Ministry of India">
+  <meta name="author" content="Government of India">
+  <title>Consumer Affairs</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="shortcut icon" href="https://consumeraffairs.nic.in/sites/all/themes/cmf/favicon.ico" type="image/vnd.microsoft.icon">
+  
+  <!-- External CSS for styling -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- External JavaScript -->
+  <script src="scripts.js"></script>
+</head>
+<body>
+  <!-- Header Section -->
+  <header style="background-color: white;">
+    <!-- Top header with government links -->
+   
+      <div class="wrapper common-wrapper">
+        <div class="container common-container">
+          <!-- Left side: Government links -->
+            <div class="common-center">
+            <ul> 
+                <a href="https://www.india.gov.in/" target="_blank" style="text-align: left;;">
+                  <img src="govt.png" alt="Government Of India" style="width: 1000px; height: 100px;">
+                </a>
+              </li> 
+            </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr style="background-color: black; height: 1px;">
+    <!-- Logo and additional links -->
+    <div class="header-wrapper" style="text-align: center;">
+      <div class="container header-container">
+      <div class="logo">
+        <a href="/en" title="Home" rel="home" class="header__logo" id="logo"></a>
+            <img src="emblem.png" alt="National Emblem" style="display: block; margin: 0 auto; width: 500px; height: 150px;">
+          </a>
+        </div>
+        <div class="header-right" style="text-align: left;">
+          <a href="https://www.g20.org/en/">
+            <img src="g20.png" alt="G20 Logo" style="width: 150px; height: 100px;">
+          </a>
+          <a href="https://consumerhelpline.gov.in/">
+            <img src="nch-logo.png" alt="National Consumer Helpline" style="width: 100px; height: 100px;">
+          </a>
+        </div>
+      </div>
+      <div class="region region-header-top">
+        <h1>Heat Map</h1>
+      </div>
+        
+    </div>
+    
+    <title>D3 Heatmap with Line Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        #my_dataviz { position: relative; }
+        #lineChartContainer { position: absolute; top: 0; left: 100%; margin-left: 20px; }
+    </style>
+</head>
+<body>
+    <div id="my_dataviz"></div>
+    <div id="lineChartContainer"></div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

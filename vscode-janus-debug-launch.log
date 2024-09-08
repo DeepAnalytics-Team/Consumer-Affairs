@@ -1,0 +1,11 @@
+INFO |00001.534|JanusDebugSession: launchRequest
+DEBUG|00001.534|JanusDebugSession: my workspace: c:\Users\Shiva Bharathi\Downloads\Deep_Analytics
+INFO |00001.534|JanusDebugSession: Disabled source map support because i could not find the output directory of your source maps
+DEBUG|00001.535|DebugAdapterIPC: connect to VS Code extension (sock12852)
+DEBUG|00001.538|DebugAdapterIPC: connected to VS Code extension
+INFO |00001.539|DebugAdapterIPC: checkForAdditionalDebugJSONHelpers
+DEBUG|00001.539|DebugAdapterIPC: checkForAdditionalDebugJSONHelpers
+DEBUG|00002.128|DebugAdapterIPC: findURIsInWorkspace
+ERROR|00002.309|JanusDebugSession: launchRequest failed: AggregateError: Unhandled error ocurred: The TCP-connection failed: 
+DEBUG|00002.309|JanusDebugSession: done; disconnecting SDS connection
+INFO |00002.311|JanusDebugSession: disconnectRequest
