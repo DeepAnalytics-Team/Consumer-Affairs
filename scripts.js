@@ -68,58 +68,62 @@ d3.csv("sample(1).csv").then(function(data) {
         .interpolator(d3.interpolateInferno)
         .domain([0, 100]); // Adjust domain based on your data
 
+
+   
+      // Add the squares
+      svg.selectAll()
+      .data(allCombinations, function(d) { return d.group + ':' + d.variable; })
+      .enter()
+      .append("rect")
+      .attr("x", function(d) { return x(d.variable); })
+      .attr("y", function(d) { return y(d.group); })
+      .attr("rx", 4)
+      .attr("ry", 4)
+      .attr("width", x.bandwidth())
+      .attr("height", y.bandwidth())
+      .style("fill", function(d) { return myColor(d.value); })
+      .style("stroke-width", 4)
+      .style("stroke", "none")
+      .style("opacity", 0.8)
+      .on("mouseover", mouseover)
+      .on("mousemove", mousemove)
+      .on("mouseleave", mouseleave)
+      });
+
+       
     // Create a tooltip
-    var tooltip = d3.select("#my_dataviz")
-        .append("div")
-        .style("opacity", 0)
-        .attr("class", "tooltip")
-        .style("background-color", "white")
-        .style("border", "solid")
-        .style("border-width", "2px")
-        .style("border-radius", "5px")
-        .style("padding", "5px");
+    var tooltip = d3.select("body")
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "2px solid")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+    .style("position", "absolute");
 
-    // Functions to handle tooltip interactions
-    var mouseover = function() {
-        tooltip.style("opacity", 1);
-        d3.select(this)
-            .style("stroke", "black")
-            .style("opacity", 1);
-    };
+// Three functions that change the tooltip when user hover / move / leave a cell
+var mouseover = function(event, d) {
+    tooltip
+        .style("opacity", 1);
+    d3.select(this)
+        .style("stroke", "black")
+        .style("opacity", 1);
+};
 
-    var mousemove = function(event, d) {
-        tooltip
-            .html("The exact value of<br>this cell is: " + d.value)
-            .style("left", (event.pageX + 70) + "px")
-            .style("top", (event.pageY) + "px");
-    };
+var mousemove = function(event, d) {
+    tooltip
+        .html("Value: " + d.value)
+        .style("left", (event.pageX + 10) + "px")
+        .style("top", (event.pageY - 28) + "px");
+};
 
-    var mouseleave = function() {
-        tooltip.style("opacity", 0);
-        d3.select(this)
-            .style("stroke", "none")
-            .style("opacity", 0.8);
-    };
-
-    // Add the squares
-    svg.selectAll()
-        .data(allCombinations, function(d) { return d.group + ':' + d.variable; })
-        .enter()
-        .append("rect")
-        .attr("x", function(d) { return x(d.variable); })
-        .attr("y", function(d) { return y(d.group); })
-        .attr("rx", 4)
-        .attr("ry", 4)
-        .attr("width", x.bandwidth())
-        .attr("height", y.bandwidth())
-        .style("fill", function(d) { return myColor(d.value); })
-        .style("stroke-width", 4)
+var mouseleave = function(event, d) {
+    tooltip
+        .style("opacity", 0);
+    d3.select(this)
         .style("stroke", "none")
-        .style("opacity", 0.8)
-        .on("mouseover", mouseover)
-        .on("mousemove", mousemove)
-        .on("mouseleave", mouseleave);
+        .style("opacity", 0.8);
+};
 
-}).catch(function(error) {
-    console.error('Error loading the CSV file:', error);
-});
+  
